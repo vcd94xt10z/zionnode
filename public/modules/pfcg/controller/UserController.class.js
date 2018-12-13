@@ -5,7 +5,7 @@ var method = UserController.prototype;
 function UserController(){
 }
 
-UserController.actionHome = function(){
+UserController.actionHome = function(payload){
 	/*
 	var html = ejs.render("<%= user.name %>", {
 	    user: { name: 'Vinicius' }
@@ -15,8 +15,16 @@ UserController.actionHome = function(){
 	data = "";
 	options = {user: { name: 'Vinicius' }};
 	ejs.renderFile("./modules/pfcg/view/user-requestLogin.ejs", options, function(err, str){
-		global.res.end(str);
+		payload.res.end(str);
 	});
+}
+
+UserController.actionList = function(payload){
+	payload.res.send("Estou na listagem");
+}
+
+UserController.actionEdit = function(payload){
+	payload.res.send("Estou na edição");
 }
 
 module.exports = UserController;

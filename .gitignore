@@ -1,0 +1,4 @@
+/.settings
+/.project
+/public/node_modules
+/public/package-lock.json
